@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <link href="/assets/css/main.css" rel="stylesheet">
+  </head>
+  <body>
+    <a href="/">Index Page</a>
+    <br></br>
+
+    <a href="/gif/{{ .index }}"><h2>{{ .name }}</h2></a>
+    <p>{{ .description }}</p>
+    <img src={{ .url }} alt={{ .description }}>
+    <br><br>
+    <a href="/gif/edit/{{ .index }}">Edit</a>
+    <a href="/gif/delete/{{ .index }}">Delete</a>
+  </body>
+</html>

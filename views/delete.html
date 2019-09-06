@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <link href="/assets/css/main.css" rel="stylesheet">
+  </head>
+  <body>
+    <a href="/">Index Page</a>
+    <br></br>
+
+    <p>Are you sure you want to delete <b>{{ .title }}</b>?</p>
+    <form action="/gif/destroy/{{ .index }}" method="post">
+      <input type="submit" value="Yes"/>
+    </form>
+
+    <!-- Return to page visited before this  -->
+    <a href="#" onclick="history.go(-1)"><button>No</button></a>
+  </body>
+</html>

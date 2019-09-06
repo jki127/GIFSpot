@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <link href="/assets/css/main.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1>GIFSpot</h1>
+    <h3>Store your favorite GIFs!</h3>
+    <a href="./gif/new">&plus; Add another GIF</a>
+    <br><br>
+    {{ range $_, $gif := .gifs }}
+    <a href="/gif/{{ $gif.Index }}"><h2>{{ $gif.Name }}</h2></a>
+    <p>{{ $gif.Description }}</p>
+      {{ if $gif.Url }}
+        <img src={{ .Url }} alt={{ $gif.Description }}>
+      {{ end }}
+    <br><br>
+    <a href="/gif/edit/{{ $gif.Index }}">Edit</a>
+    <a href="/gif/delete/{{ $gif.Index }}">Delete</a>
+    <hr>
+    {{ end }}
+  </body>
+</html>
